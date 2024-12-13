@@ -1,59 +1,1390 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  </head>
-  <style>
-    @media screen and (max-width: 600px) {
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<style>
+  * {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: content-box;
+  }
+
+  .questions-section {
+    text-align: center;
+  }
+
+  .page {
+    max-width: 1600px;
+    margin: auto;
+
+    padding: 10px;
+    text-align: center;
+  }
+
+  .questionsAndAnsSection {
+    background-color: #b5dbd3;
+
+  }
+
+  .home-usp-sec {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+  }
+
+  .home-usp-latest-wrap,
+  .category-slider {
+    text-align: center;
+  }
+
+  .category-slider {
+    margin-top: 10%;
+  }
+
+  .usp-inner-wrap img {
+    width: 100%;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  .section-title p {
+    max-width: 1166px;
+    font-size: 1.6rem;
+    line-height: 25px;
+    margin: auto;
+  }
+
+  .title {
+    font-size: 1.9rem;
+  }
+
+  .usp_btn {
+    font-size: 1rem;
+    width: 190px;
+    padding: 12px 0;
+    background-color: #005f9b;
+    color: white;
+    border: 0px;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .swiper-slide {
+    width: 60%;
+  }
+  .slide-product img {
+    width: 100%;
+  }
+
+  .selectiondoor-wrap,
+  .kitchen-cabinets-listing-home {
+    text-align: center;
+  }
+
+  .kitchen-item img {
+    width: 100%;
+  }
+
+  .kitchen-grid1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  .kitchen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+
+  .kitchen-cabinets-listing-home p {
+    max-width: 1166px;
+    font-size: 1.6rem;
+    line-height: 25px;
+    margin: auto;
+    margin-bottom: 5%;
+  }
+
+  .backgroundImg img {
+    width: 100%;
+  }
+
+  .backgroundImg {
+    position: relative;
+  }
+
+  .image-wrap {
+    position: absolute;
+    top: -102px;
+  }
+
+  .image-wrap img {
+    width: 500px;
+  }
+
+  .pagebuilder-column {
+    margin-top: 9%;
+  }
+
+  .new-video-home img {
+    margin: auto;
+  }
+
+  .new-video-home {
+    text-align: center;
+  }
+
+  .customer-review-main {
+    text-align: center;
+  }
+
+  .view-all-review-btn {
+    background-color: #005f9b;
+    color: white;
+    border: 0px;
+    padding: 10px;
+  }
+
+  .section-title {
+    text-align: center;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+  }
+
+  ul.tiktok-feed-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  ul.new_socila_media_home {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  li.tiktok-feed {
+    justify-self: center;
+  }
+
+  .blog-img img {
+    width: 100%;
+  }
+
+  .product {
+    position: relative;
+    padding-right: 10px;
+    margin-bottom: 5%;
+  }
+
+  .product-details {
+    position: absolute;
+    max-width: 75%;
+    left: 6%;
+    padding: 10px;
+    margin-top: -30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .14);
+    background-color: white;
+  }
+
+  .blog-section {
+    display: flex;
+  }
+
+  .q-section {
+    padding: 10px;
+  }
+
+  .q-section-q {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .q-section p {
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 35%;
+  }
+
+  .view-all-btn {
+    text-align: center;
+    background-color: rgb(82, 82, 238);
+    color: white;
+    padding: 10px;
+  }
+
+  .btn1 {
+    color: #0f9c7d;
+    ;
+    padding: 10px;
+    border: 0px;
+    background-color: transparent;
+    font-size: large;
+  }
+
+  h2.primary {
+    font-size: 3.5rem;
+    color: #222;
+    width: 100%;
+    display: block;
+    margin: 0 0 36px;
+    line-height: 1;
+  }
+
+  a.usp-inner-wrap {
+    text-decoration: none;
+  }
+
+  a.vt-common-buttons.connect-with-us-btn {
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 0;
+    background-color: white;
+    color: green;
+    text-decoration: none;
+  }
+
+  a.vt-common-buttons.schedule-nowbtn {
+    color: white;
+    border: 1px solid white;
+    padding: 9px;
+    text-decoration: none;
+  }
+
+  span.note {
+    line-height: 1.5rem;
+  }
+
+  @media (min-width: 300px) and (max-width: 600px) {
+    .home-usp-sec {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
+      row-gap: 0px;
+      overflow: hidden;
     }
-    @media screen and (min-width: 600px) and (max-width: 768px) {
+    .usp_btn {
+    font-size: 1rem;
+    width: 190px;
+    padding: 12px 0;
+    background-color: #005f9b;
+    color: white;
+    border: 0px;
+    display: none;
+}
+    .data-content-wrap .note {
+      margin-top: 3px;
     }
-    @media screen and (min-width: 769px) and (max-width: 992px) {
+
+    h1.primary {
+      font-size: 1.6rem;
+      line-height: 24px;
+      font-family: work_sanssemibold;
+      margin-bottom: 5%;
     }
-    @media screen and(min-width:993px) and (max-width: 1200px) {
+
+    .data-content-wrap p {
+      margin-top: 3px;
+      margin-bottom: 3px;
     }
-    @media screen and(min-width:1201) {
+
+    .grid-container img.lazyload.loaded {
+      height: 300px;
+      width: 300px;
     }
-    .page {
-      max-width: 1600px;
-      margin: auto;
-      background-color: antiquewhite;
+
+    .client-div img.review-img.lazyload.loaded {
+      height: 200px;
+      width: 350px;
+    }
+
+    h2.primary {
+      font-size: 1.6rem;
+      line-height: 24px;
+      font-family: work_sanssemibold;
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+
+    .kitchen-grid1::-webkit-scrollbar-thumb {
+      height: 5px;
+      background-color: #0f9c7d;
+      border-radius: 5px;
+    }
+
+    .ans {
+      font-size: 12px;
+      line-height: 18px;
+      font-family: work_sansregular;
+    }
+
+    .title {
+      font-size: 1.1rem;
+      color:black;
+      margin: 6px 0 0;
+    }
+
+    li.tiktok-feed {
+      justify-self: center;
+      margin-right: 20px;
+    }
+
+    .questionsAndAnsSection {
+      background-color: #b5dbd3;
+      margin-bottom: 0%;
+      margin-top: 0%;
+      border-radius: 0%;
+    }
+
+    .product {
+      position: relative;
+      margin-bottom: 20%;
+      padding-right: 0px;
+      margin-right: 20px;
+    }
+
+
+
+    .image-wrap {
+      position: absolute;
+      top: -102px;
+      display: none;
+    }
+
+    .kitchen-grid {
+      display: flex;
+      overflow: scroll;
+    }
+
+    img.review-img.lazyload.loaded {
+      width: 100%;
+    }
+
+    .grid-container {
+      display: flex;
+      overflow: scroll;
+      margin-top: 4%;
+    }
+
+    .q-section p {
+      text-align: left;
       padding: 10px;
     }
+
+
+    .new-video-home img {
+      margin: auto;
+      width: 100%;
+      height: 75%;
+    }
+
+    .blog-section {
+
+      display: flex;
+      overflow: scroll;
+
+    }
+
+    .kitchen-item {
+      min-width: 300px;
+    }
+
+    .product-details {
+      position: absolute;
+      max-width: 305px;
+      left: 2%;
+      padding: 10px;
+      margin-top: -30px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, .14);
+      background-color: white;
+    }
+
+    ul.tiktok-feed-content {
+      display: flex;
+      overflow: scroll;
+      scrollbar-color: #007 #bada55;
+    }
+
+    .section-title p {
+      max-width: 1166px;
+      font-size: 1rem;
+      line-height: 25px;
+      margin: auto;
+    }
+
+    .kitchen-cabinets-listing-home p {
+      max-width: 1166px;
+      font-size: 1.2rem;
+      line-height: 25px;
+      margin: auto;
+      margin-bottom: 5%;
+    }
+
+    .kitchen-grid1 {
+      display: flex;
+      overflow: scroll;
+    }
+
+    .usp-inner-wrap img {
+      width: 100%;
+      height: 75%;
+    }
+
+    .slide-product-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .shop-btn {
+      background: 0 0;
+      color: #0f9c7d;
+      font-size: 1.6rem;
+      border: 1px solid #0f9c7d;
+      line-height: 1;
+      padding: 12px 0 10px;
+      text-align: center;
+      box-shadow: inherit;
+      margin-bottom: 15px;
+      width: 100%;
+      display: block;
+    }
+
+    .product-name {
+      color: #222;
+      font-size: 18px;
+      font-family: work_sanssemibold;
+      text-align: center;
+      line-height: 25px;
+      height: 47px;
+      overflow: hidden;
+      display: block;
+      font-weight: bold;
+      width: auto;
+    }
+
+    .client-div {
+      margin-right: 30px;
+    }
+
+    li.cabinet-grid {
+      margin-right: 30px;
+
+    }
+
+    .blog-img img {
+      width: 100%;
+      min-width: 340px;
+    }
+
+    .data-content-wrap {
+      position: absolute;
+      top: 20%;
+      color: white;
+      width: 80%;
+      left: 8%;
+    }
+
+    .q-section-q h2 {
+      line-height: 18px;
+      font-size: 1.2rem;
+    }
+  }
+
+  @media (min-width: 601px) and (max-width: 768px) {
+    .home-usp-sec {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3px;
+      row-gap: 15px;
+    }
+
+    h2.primary {
+      font-size: 2rem;
+      line-height: 24px;
+      font-family: work_sanssemibold;
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+
+    .title {
+      font-size: 1.1rem;
+    }
+
+    li.tiktok-feed {
+      justify-self: center;
+      margin-right: 20px;
+    }
+
+    .questionsAndAnsSection {
+      background-color: #b5dbd3;
+      margin-bottom: 0%;
+      margin-top: 0%;
+      border-radius: 0%;
+    }
+
+    .product {
+      position: relative;
+      margin-bottom: 20%;
+      padding-right: 0px;
+      margin-right: 20px;
+    }
+
+
+
+    .image-wrap {
+      position: absolute;
+      top: -102px;
+      display: none;
+    }
+
+    .kitchen-grid {
+      display: flex;
+      overflow: scroll;
+    }
+
+    img.review-img.lazyload.loaded {
+      width: 100%;
+    }
+
+    .grid-container {
+      display: flex;
+      overflow: scroll;
+      margin-top: 4%;
+    }
+
+    .q-section p {
+      text-align: left;
+      padding: 10px;
+    }
+
+
+    .new-video-home img {
+      margin: auto;
+      width: 100%;
+      height: 75%;
+    }
+
+    .blog-section {
+
+      display: flex;
+      overflow: scroll;
+
+    }
+
+    .kitchen-item {
+      min-width: 300px;
+    }
+
+    .product-details {
+      position: absolute;
+      max-width: 305px;
+      left: 2%;
+      padding: 10px;
+      margin-top: -30px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, .14);
+      background-color: white;
+    }
+
+    ul.tiktok-feed-content {
+      display: flex;
+      overflow: scroll;
+    }
+
+    .section-title p {
+      max-width: 1166px;
+      font-size: 1rem;
+      line-height: 25px;
+      margin: auto;
+    }
+
+    .kitchen-cabinets-listing-home p {
+      max-width: 1166px;
+      font-size: 1rem;
+      line-height: 25px;
+      margin: auto;
+      margin-bottom: 5%;
+    }
+
+    .kitchen-grid1 {
+      display: flex;
+      overflow: scroll;
+    }
+
+    .usp-inner-wrap img {
+      width: 100%;
+      height: 75%;
+    }
+
+    .slide-product-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .shop-btn {
+      background: 0 0;
+      color: #0f9c7d;
+      font-size: 1.6rem;
+      border: 1px solid #0f9c7d;
+      line-height: 1;
+      padding: 12px 0 10px;
+      text-align: center;
+      box-shadow: inherit;
+      margin-bottom: 15px;
+      width: 100%;
+      display: block;
+    }
+
+    .product-name {
+      color: #222;
+      font-size: 18px;
+      font-family: work_sanssemibold;
+      text-align: center;
+      line-height: 25px;
+      height: 47px;
+      overflow: hidden;
+      display: block;
+      font-weight: bold;
+      width: auto;
+    }
+
+    .client-div {
+      margin-right: 30px;
+    }
+
+    li.cabinet-grid {
+      margin-right: 30px;
+
+    }
+
+    .blog-img img {
+      width: 100%;
+      min-width: 340px;
+    }
+
+    .data-content-wrap {
+      position: absolute;
+      top: 26%;
+      color: white;
+      width: 80%;
+      left: 8%;
+    }
+  }
+
+  @media (min-width: 769px) and (max-width: 992px) {
+    .home-usp-sec {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3px;
+      row-gap: 15px;
+    }
+
+    .category-slider {
+      margin-top: 0%;
+    }
+
+    h2.primary {
+      font-size: 2rem;
+      line-height: 24px;
+      font-family: work_sanssemibold;
+      margin-bottom: 15px;
+      margin-top: 15px;
+    }
+
+    .ans {
+      font-size: 1.2rem;
+      color: #222;
+      line-height: 1.9;
+      position: relative;
+      margin: auto;
+      max-width: 1600px;
+      text-align: left;
+    }
+
+    .title {
+      font-size: 1.1rem;
+    }
+
+    li.tiktok-feed {
+      justify-self: center;
+      margin-right: 20px;
+    }
+
+    .questionsAndAnsSection {
+      background-color: #b5dbd3;
+      margin-bottom: 0%;
+      margin-top: 0%;
+      border-radius: 0%;
+    }
+
+    .product {
+      position: relative;
+      margin-bottom: 7%;
+      padding-right: 0px;
+      margin-right: 20px;
+    }
+
+
+
+    .image-wrap {
+      position: absolute;
+      top: -102px;
+      display: none;
+    }
+
+    .kitchen-grid {
+      display: flex;
+      overflow: scroll;
+    }
+
+    img.review-img.lazyload.loaded {
+      width: 100%;
+    }
+
+    .grid-container {
+      display: flex;
+      overflow: scroll;
+      margin-top: 4%;
+    }
+
+    .q-section p {
+      text-align: left;
+      padding: 10px;
+    }
+
+
+    .new-video-home img {
+      margin: auto;
+      width: 100%;
+      height: 75%;
+    }
+
+    .blog-section {
+
+      display: flex;
+      overflow: scroll;
+
+    }
+
+    .kitchen-item {
+      min-width: 300px;
+    }
+
+    .product-details {
+      position: absolute;
+      max-width: 305px;
+      left: 2%;
+      padding: 10px;
+      margin-top: -30px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, .14);
+      background-color: white;
+    }
+
+    ul.tiktok-feed-content {
+      display: flex;
+      overflow: scroll;
+    }
+
+    .section-title p {
+      max-width: 1166px;
+      font-size: 1rem;
+      line-height: 25px;
+      margin: auto;
+    }
+
+    .kitchen-cabinets-listing-home p {
+      max-width: 1166px;
+      font-size: 1rem;
+      line-height: 25px;
+      margin: auto;
+      margin-bottom: 5%;
+    }
+
+    .kitchen-grid1 {
+      display: flex;
+      overflow: scroll;
+    }
+
+    .usp-inner-wrap img {
+      width: 100%;
+      height: 75%;
+    }
+
+    .slide-product-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .shop-btn {
+      background: 0 0;
+      color: #0f9c7d;
+      font-size: 1.6rem;
+      border: 1px solid #0f9c7d;
+      line-height: 1;
+      padding: 12px 0 10px;
+      text-align: center;
+      box-shadow: inherit;
+      margin-bottom: 15px;
+      width: 100%;
+      display: block;
+    }
+
+    .product-name {
+      color: #222;
+      font-size: 18px;
+      font-family: work_sanssemibold;
+      text-align: center;
+      line-height: 25px;
+      height: 47px;
+      overflow: hidden;
+      display: block;
+      font-weight: bold;
+      width: auto;
+    }
+
+    .client-div {
+      margin-right: 30px;
+    }
+
+    li.cabinet-grid {
+      margin-right: 30px;
+
+    }
+
+    .blog-img img {
+      width: 100%;
+      min-width: 340px;
+    }
+
+    .data-content-wrap {
+      position: absolute;
+      top: 26%;
+      color: white;
+      width: 80%;
+      left: 8%;
+    }
+  }
+
+  @media (min-width: 993px) and (max-width: 1200px) {
+    .kitchen-grid {
+      display: flex;
+      overflow: scroll;
+    }
+
+    .product-details {
+      left: 10%;
+    }
+
+    .slide-product-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-wrap img {
+      width: 300px;
+    }
+
+    .product-name {
+      color: #222;
+      font-size: 18px;
+      font-family: work_sanssemibold;
+      text-align: center;
+      line-height: 25px;
+      height: 47px;
+      overflow: hidden;
+      display: block;
+      font-weight: bold;
+      width: auto;
+    }
+
+    .shop-btn {
+      background: 0 0;
+      color: #0f9c7d;
+      font-size: 1.6rem;
+      border: 1px solid #0f9c7d;
+      line-height: 1;
+      padding: 12px 0 10px;
+      text-align: center;
+      box-shadow: inherit;
+      margin-bottom: 15px;
+      width: 100%;
+      display: block;
+    }
+
+    .new-video-home img {
+      margin: auto;
+      width: 100%;
+    }
+
+    ul.tiktok-feed-content {
+      display: flex;
+      overflow: scroll;
+    }
+
+    li.tiktok-feed {
+
+      margin-right: 10px;
+    }
+
+    .data-content-wrap {
+      position: absolute;
+      top: 20%;
+      color: white;
+      max-width: 30%;
+      text-align: left;
+      left: 48%;
+    }
+
+    .grid-container {
+      display: flex;
+      overflow: scroll;
+      text-align: center;
+      margin-top: 2%;
+    }
+
+    li.cabinet-grid {
+      margin-right: 10px;
+    }
+
+    ul.tiktok-feed-content {
+      display: flex;
+      overflow: scroll;
+
+
+    }
+
+    .kitchen-grid1 {
+      display: flex;
+      overflow: scroll;
+    }
+
+    .kitchen-item {
+      margin-right: 10px;
+    }
+
+    .ans {
+      font-size: 1.2rem;
+      color: #222;
+      line-height: 1.9;
+      position: relative;
+      margin: auto;
+      max-width: 1600px;
+      text-align: left;
+    }
+  }
+
+  @media (min-width: 1201px) and (max-width: 1625px) {
+    .questionsAndAnsSection {
+      background-color: #b5dbd3;
+      padding-left: 18%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .ans {
+      font-size: 1.6rem;
+      color: #222;
+      line-height: 1.9;
+      position: relative;
+      margin: auto;
+      max-width: 1600px;
+      text-align: left;
+    }
+
+    .slide-product-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .data-content-wrap {
+      position: absolute;
+      top: 43%;
+      margin: auto;
+      color: white;
+      left: 25%;
+      max-width: 60%;
+    }
+
+    .product-name {
+      color: #222;
+      font-size: 18px;
+      font-family: work_sanssemibold;
+      text-align: center;
+      line-height: 25px;
+      height: 47px;
+      overflow: hidden;
+      display: block;
+      font-weight: bold;
+      width: auto;
+    }
+
+    .shop-btn {
+      background: 0 0;
+      color: #0f9c7d;
+      font-size: 1.6rem;
+      border: 1px solid #0f9c7d;
+      line-height: 1;
+      padding: 12px 0 10px;
+      text-align: center;
+      box-shadow: inherit;
+      margin-bottom: 15px;
+      width: 100%;
+      display: block;
+    }
+
     .home-usp-sec {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      column-gap: 10px;
+      column-gap: 42px;
     }
+
     .home-usp-latest-wrap,
     .category-slider {
       text-align: center;
     }
+
     .category-slider {
-      margin-top: 10%;
+      margin-top: 5%;
     }
+
     .usp-inner-wrap img {
       width: 100%;
     }
+
     ul {
       list-style-type: none;
     }
-    .section-title p {
+
+    .title {
+      display: block;
+      line-height: 1;
+      font-size: 2.4rem;
+      color: #222;
+      font-family: work_sanssemibold;
+      margin: 12px 0 14px;
+    }
+
+    .usp_btn {
+      font-size: 1rem;
+      width: 190px;
+      padding: 12px 0;
+      background-color: #005f9b;
+      color: white;
+      border: 0px;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+      margin-top: 5%;
+      margin-bottom: 5%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-slide {
+      width: 60%;
+    }
+
+    .slide-product img {
+      width: 100%;
+    }
+
+    .selectiondoor-wrap,
+    .kitchen-cabinets-listing-home {
+      text-align: center;
+    }
+
+    .kitchen-item img {
+      width: 100%;
+    }
+
+    .kitchen-grid {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      overflow: scroll;
+    }
+
+    .kitchen-grid {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+    }
+
+    /**/
+    .kitchen-cabinets-listing-home p {
       max-width: 1166px;
       font-size: 1.6rem;
       line-height: 25px;
       margin: auto;
+      margin-bottom: 5%;
     }
+
+    .backgroundImg img {
+      width: 100%;
+    }
+
+    .backgroundImg {
+      position: relative;
+    }
+
+    .image-wrap {
+      position: absolute;
+      top: -102px;
+    }
+
+    .image-wrap img {
+      width: 500px;
+    }
+
+    .pagebuilder-column {
+      margin-top: 9%;
+    }
+
+    .new-video-home img {
+      margin: auto;
+    }
+
+    .new-video-home {
+      text-align: center;
+    }
+
+    .customer-review-main {
+      text-align: center;
+    }
+
+    .view-all-review-btn {
+      background-color: #005f9b;
+      color: white;
+      border: 0px;
+      padding: 10px;
+    }
+
+    .section-title {
+      text-align: center;
+    }
+
+    .grid-container {
+      display: flex;
+      justify-content: space-around;
+      overflow: scroll;
+    }
+
+    img.lazyload.loaded {
+      margin-right: 10px;
+    }
+
+    ul.new_socila_media_home {
+      display: flex;
+      justify-content: space-evenly;
+      margin-top: 3%;
+    }
+
+    li.tiktok-feed {
+      justify-self: center;
+    }
+
+    .blog-img img {
+      width: 100%;
+    }
+
+    .product {
+      position: relative;
+      padding-right: 10px;
+      margin-bottom: 5%;
+    }
+
+    .product-details {
+      position: absolute;
+      max-width: 305px;
+      left: 9%;
+      padding: 10px;
+      margin-top: -30px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, .14);
+      background-color: white;
+    }
+
+    .blog-section {
+      display: flex;
+    }
+
+    .q-section {
+      padding: 10px;
+
+    }
+
+    .dream-home-section-new {
+      margin-top: 3%;
+      margin-bottom: 3%;
+    }
+
+    ul.tiktok-feed-content {
+      display: flex;
+      overflow: scroll;
+    }
+
+    .section-title p {
+      max-width: 1166px;
+      font-size: 1rem;
+      line-height: 25px;
+      margin: auto;
+      margin-top: 2%;
+    }
+  }
+
+  @media (min-width: 1626px) {
+    .questionsAndAnsSection {
+      background-color: #b5dbd3;
+      padding-left: 18%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .ans {
+      font-size: 1.6rem;
+      color: #222;
+      line-height: 1.9;
+      position: relative;
+      margin: auto;
+      max-width: 1600px;
+      text-align: left;
+    }
+
+    .slide-product-flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .data-content-wrap {
+      position: absolute;
+      top: 43%;
+      margin: auto;
+      color: white;
+      left: 25%;
+      max-width: 60%;
+    }
+
+    .product-name {
+      color: #222;
+      font-size: 18px;
+      font-family: work_sanssemibold;
+      text-align: center;
+      line-height: 25px;
+      height: 47px;
+      overflow: hidden;
+      display: block;
+      font-weight: bold;
+      width: auto;
+    }
+
+    .shop-btn {
+      background: 0 0;
+      color: #0f9c7d;
+      font-size: 1.6rem;
+      border: 1px solid #0f9c7d;
+      line-height: 1;
+      padding: 12px 0 10px;
+      text-align: center;
+      box-shadow: inherit;
+      margin-bottom: 15px;
+      width: 100%;
+      display: block;
+    }
+
+    .home-usp-sec {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 42px;
+    }
+
+    .home-usp-latest-wrap,
+    .category-slider {
+      text-align: center;
+    }
+
+    .category-slider {
+      margin-top: 5%;
+    }
+
+    .usp-inner-wrap img {
+      width: 100%;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
     .title {
-      font-size: 1.9rem;
+      display: block;
+      line-height: 1;
+      font-size: 2.4rem;
+      color: #222;
+      font-family: work_sanssemibold;
+      margin: 12px 0 14px;
     }
+
     .usp_btn {
       font-size: 1rem;
       width: 190px;
@@ -96,22 +1427,35 @@
     .swiper-slide:nth-child(3n) {
       width: 40%;
     }
+
     .slide-product img {
       width: 100%;
     }
+
     .selectiondoor-wrap,
     .kitchen-cabinets-listing-home {
       text-align: center;
     }
+
     .kitchen-item img {
       width: 100%;
     }
+
     .kitchen-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      column-gap: 10px;
-      row-gap: 10px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
     }
+
+    .kitchen-grid {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+    }
+
+    /**/
     .kitchen-cabinets-listing-home p {
       max-width: 1166px;
       font-size: 1.6rem;
@@ -119,857 +1463,1051 @@
       margin: auto;
       margin-bottom: 5%;
     }
+
     .backgroundImg img {
       width: 100%;
     }
+
     .backgroundImg {
       position: relative;
     }
+
     .image-wrap {
       position: absolute;
       top: -102px;
     }
+
     .image-wrap img {
       width: 500px;
     }
+
     .pagebuilder-column {
       margin-top: 9%;
     }
+
     .new-video-home img {
       margin: auto;
     }
+
     .new-video-home {
       text-align: center;
     }
+
     .customer-review-main {
       text-align: center;
     }
+
     .view-all-review-btn {
       background-color: #005f9b;
       color: white;
       border: 0px;
       padding: 10px;
     }
+
     .section-title {
       text-align: center;
     }
+
     .grid-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      text-align: center;
+      display: flex;
+      justify-content: space-around;
+
     }
-    ul.tiktok-feed-content {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+
+    img.lazyload.loaded {
+      margin-right: 10px;
     }
+
     ul.new_socila_media_home {
       display: flex;
       justify-content: space-evenly;
+      margin-top: 3%;
     }
-    li.tiktok-feed {
-    justify-self: center;
-}
 
-  </style>
-  <body>
-    <div>
-      <div class="page">
-        <div class="home-usp-latest-wrap">
-          <h2 class="primary">Simple Ways To Get Started</h2>
-          <div class="home-usp-sec">
-            <a class="usp-inner-wrap" href="" target="_blank">
-              <img
-                loading="lazyload"
-                width="402"
-                height="402"
-                src="https://www.lilyanncabinets.com/media/wysiwyg/LAC_simple_way_img1.png"
-                alt="Visualize Your Space"
-                title="Visualize Your Space"
-              />
-              <span class="title">Visualize Your Space</span>
-              <button class="usp_btn">Explore Now</button>
-            </a>
-            <a class="usp-inner-wrap" href="" target="_blank">
-              <img
-                loading="lazyload"
-                width="402"
-                height="402"
-                src="https://www.lilyanncabinets.com/media/wysiwyg/LAC_simple_way_img2.png"
-                alt="Order Free Samples"
-                title="Order Free Samples"
-              />
-              <span class="title">Order Free Samples</span>
-              <button class="usp_btn">Get Free Samples</button>
-            </a>
-            <a class="usp-inner-wrap" href="" target="_blank">
-              <img
-                loading="lazyload"
-                width="402"
-                height="402"
-                src="https://www.lilyanncabinets.com/media/wysiwyg/LAC_simple_way_img3.png"
-                alt="Get A Free 3D Design"
-                title="Get A Free 3D Design"
-              />
-              <span class="title">Get A Free 3D Design</span>
-              <button class="usp_btn">Get Free Design</button></a
-            >
-            <a class="usp-inner-wrap" href="" target="_blank">
-              <img
-                loading="lazyload"
-                width="402"
-                height="402"
-                src="https://www.lilyanncabinets.com/media/wysiwyg/LAC_simple_way_img4.png"
-                alt="Ship Order In 72 Hours"
-                title="Ship Order In 72 Hours"
-              />
-              <span class="title">Ship Order In 72 Hours</span>
-              <button class="usp_btn">Order Now</button>
-            </a>
-          </div>
+    li.tiktok-feed {
+      justify-self: center;
+    }
+
+    .blog-img img {
+      width: 100%;
+    }
+
+    .product {
+      position: relative;
+      padding-right: 10px;
+      margin-bottom: 5%;
+    }
+
+    .product-details {
+      position: absolute;
+      width: 300px;
+      left: 6%;
+      padding: 10px;
+      margin-top: -30px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, .14);
+      background-color: white;
+    }
+
+    .blog-section {
+      display: flex;
+    }
+
+    .q-section {
+      padding: 10px;
+
+    }
+
+    .dream-home-section-new {
+      margin-top: 3%;
+      margin-bottom: 3%;
+    }
+
+    ul.tiktok-feed-content {
+      display: flex;
+
+    }
+
+    .section-title p {
+      max-width: 1166px;
+      font-size: 1rem;
+      line-height: 25px;
+      margin: auto;
+      margin-top: 2%;
+    }
+  }
+
+
+</style>
+
+<body>
+  <div>
+    <div class="page">
+      <div class="home-usp-latest-wrap">
+        <h2 class="primary">Simple Ways To Get Started</h2>
+        <div class="home-usp-sec">
+          <a class="usp-inner-wrap" href="" target="_blank">
+            <img loading="lazyload" width="402" height="402"
+              src="https://www.lilyanncabinets.com/media/wysiwyg/LAC_simple_way_img1.png" alt="Visualize Your Space"
+              title="Visualize Your Space" />
+            <span class="title">Visualize Your Space</span>
+            <button class="usp_btn">Explore Now</button>
+          </a>
+          <a class="usp-inner-wrap" href="" target="_blank">
+            <img loading="lazyload" width="402" height="402"
+              src="https://www.lilyanncabinets.com/media/wysiwyg/LAC_simple_way_img2.png" alt="Order Free Samples"
+              title="Order Free Samples" />
+            <span class="title">Order Free Samples</span>
+            <button class="usp_btn">Get Free Samples</button>
+          </a>
+          <a class="usp-inner-wrap" href="" target="_blank">
+            <img loading="lazyload" width="402" height="402"
+              src="https://www.lilyanncabinets.com/media/wysiwyg/LAC_simple_way_img3.png" alt="Get A Free 3D Design"
+              title="Get A Free 3D Design" />
+            <span class="title">Get A Free 3D Design</span>
+            <button class="usp_btn">Get Free Design</button></a>
+          <a class="usp-inner-wrap" href="" target="_blank">
+            <img loading="lazyload" width="402" height="402"
+              src="https://www.lilyanncabinets.com/media/wysiwyg/LAC_simple_way_img4.png" alt="Ship Order In 72 Hours"
+              title="Ship Order In 72 Hours" />
+            <span class="title">Ship Order In 72 Hours</span>
+            <button class="usp_btn">Order Now</button>
+          </a>
         </div>
-        <div class="category-slider">
-          <div class="section-title">
-            <h1 class="primary">Premium Quality Kitchen Cabinets</h1>
-            <p>
-              At Lily Ann Cabinets, we offer much more than just wholesale
-              cabinets. We offer top notch services such as FREE kitchen cabinet
-              designs and FREE samples delivered directly to your doorstep. As
-              the only 5 star family business in the industry, we pride
-              ourselves on giving our customers the best customer service and
-              quality products at the best price!
-            </p>
-          </div>
-          <div class="swiper mySwiper">
-            <ul class="swiper-wrapper">
-              <li class="swiper-slide">
-                <div class="slide-product">
-                  <img
-                    src="	https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                    alt=""
-                  />
-                </div>
-              </li>
-              <li class="swiper-slide">
-                <div class="slide-product">
-                  <img
-                    src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                    alt=""
-                  />
-                </div>
-              </li>
-              <li class="swiper-slide">
-                <div class="slide-product">
-                  <img
-                    src="	https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                    alt=""
-                  />
-                </div>
-              </li>
-              <li class="swiper-slide">
-                <div class="slide-product">
-                  <img
-                    src="	https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                    alt=""
-                  />
-                </div>
-              </li>
-              <li class="swiper-slide">
-                <div class="slide-product">
-                  <img
-                    src="	https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                    alt=""
-                  />
-                </div>
-              </li>
-              <li class="swiper-slide">
-                <div class="slide-product">
-                  <img
-                    src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                    alt=""
-                  />
-                </div>
-              </li>
-              <li class="swiper-slide">
-                <div class="slide-product">
-                  <img
-                    src="	https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                    alt=""
-                  />
-                </div>
-              </li>
-              <li class="swiper-slide">
-                <div class="slide-product">
-                  <img
-                    src="	https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                    alt=""
-                  />
-                </div>
-              </li>
-              <li class="swiper-slide">
-                <div class="slide-product">
-                  <img
-                    src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                    alt=""
-                  />
-                </div>
-              </li>
-            </ul>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-          </div>
-        </div>
-        <div class="selectiondoor-wrap">
-          <h2>Browse Our Selection Of Popular Door Styles</h2>
+      </div>
+      <div class="category-slider">
+        <div class="section-title">
+          <h1 class="primary">Premium Quality Kitchen Cabinets</h1>
+          <p>
+            At Lily Ann Cabinets, we offer much more than just wholesale
+            cabinets. We offer top notch services such as FREE kitchen cabinet
+            designs and FREE samples delivered directly to your doorstep. As
+            the only 5 star family business in the industry, we pride
+            ourselves on giving our customers the best customer service and
+            quality products at the best price!
+          </p>
         </div>
         <div class="swiper mySwiper">
           <ul class="swiper-wrapper">
-            <li class="swiper-slide">
+            <li class="swiper-slide slide-product-flex">
               <div class="slide-product">
                 <img
                   src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                  alt=""
-                />
+                  alt="" />
               </div>
+              <p class="product-name">Product Name</p>
+              <button class="shop-btn">Shop Now</button>
             </li>
-            <li class="swiper-slide">
-              <div class="slide-product">
-                <img
-                  src="	https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                  alt=""
-                />
-              </div>
-            </li>
-            <li class="swiper-slide">
-              <div class="slide-product">
-                <img
-                  src="	https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                  alt=""
-                />
-              </div>
-            </li>
-            <li class="swiper-slide">
-              <div class="slide-product">
-                <img
-                  src="	https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                  alt=""
-                />
-              </div>
-            </li>
-            <li class="swiper-slide">
-              <div class="slide-product">
-                <img
-                  src="	https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                  alt=""
-                />
-              </div>
-            </li>
-            <li class="swiper-slide">
+            <li class="swiper-slide slide-product-flex">
               <div class="slide-product">
                 <img
                   src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                  alt=""
-                />
+                  alt="" />
               </div>
+              <p class="product-name">Product Name</p>
+              <button class="shop-btn">Shop Now</button>
             </li>
-            <li class="swiper-slide">
+            <li class="swiper-slide slide-product-flex">
               <div class="slide-product">
                 <img
                   src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                  alt=""
-                />
+                  alt="" />
               </div>
+              <p class="product-name">Product Name</p>
+              <button class="shop-btn">Shop Now</button>
             </li>
-            <li class="swiper-slide">
+            <li class="swiper-slide slide-product-flex">
               <div class="slide-product">
                 <img
-                  src="	https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                  alt=""
-                />
+                  src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                  alt="" />
               </div>
+              <p class="product-name">Product Name</p>
+              <button class="shop-btn">Shop Now</button>
             </li>
-            <li class="swiper-slide">
+            <li class="swiper-slide slide-product-flex">
               <div class="slide-product">
                 <img
-                  src="	https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
-                  alt=""
-                />
+                  src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                  alt="" />
               </div>
+              <p class="product-name">Product Name</p>
+              <button class="shop-btn">Shop Now</button>
+            </li>
+            <li class="swiper-slide slide-product-flex">
+              <div class="slide-product">
+                <img
+                  src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                  alt="" />
+              </div>
+              <p class="product-name">Product Name</p>
+              <button class="shop-btn">Shop Now</button>
+            </li>
+            <li class="swiper-slide slide-product-flex">
+              <div class="slide-product">
+                <img
+                  src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                  alt="" />
+              </div>
+              <p class="product-name">Product Name</p>
+              <button class="shop-btn">Shop Now</button>
+            </li>
+            <li class="swiper-slide slide-product-flex">
+              <div class="slide-product">
+                <img
+                  src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                  alt="" />
+              </div>
+              <p class="product-name">Product Name</p>
+              <button class="shop-btn">Shop Now</button>
             </li>
           </ul>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next" id="nxt"></div>
+          <div class="swiper-button-prev" id="prev"></div>
         </div>
-        <div class="kitchen-cabinets-listing-home">
-          <h2>Learn More About our Cabinets</h2>
+      </div>
+      <div class="selectiondoor-wrap">
+        <h2>Browse Our Selection Of Popular Door Styles</h2>
+      </div>
+      <div class="swiper mySwiper">
+        <ul class="swiper-wrapper">
+          <li class="swiper-slide slide-product-flex">
+            <div class="slide-product">
+              <img
+                src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                alt="" />
+            </div>
+            <p class="product-name">Product Name</p>
+            <button class="shop-btn">Shop Now</button>
+          </li>
+          <li class="swiper-slide slide-product-flex">
+            <div class="slide-product">
+              <img
+                src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                alt="" />
+            </div>
+            <p class="product-name">Product Name</p>
+            <button class="shop-btn">Shop Now</button>
+          </li>
+          <li class="swiper-slide slide-product-flex">
+            <div class="slide-product">
+              <img
+                src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                alt="" />
+            </div>
+            <p class="product-name">Product Name</p>
+            <button class="shop-btn">Shop Now</button>
+          </li>
+          <li class="swiper-slide slide-product-flex">
+            <div class="slide-product">
+              <img
+                src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                alt="" />
+            </div>
+            <p class="product-name">Product Name</p>
+            <button class="shop-btn">Shop Now</button>
+          </li>
+          <li class="swiper-slide slide-product-flex">
+            <div class="slide-product">
+              <img
+                src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                alt="" />
+            </div>
+            <p class="product-name">Product Name</p>
+            <button class="shop-btn">Shop Now</button>
+          </li>
+          <li class="swiper-slide slide-product-flex">
+            <div class="slide-product">
+              <img
+                src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                alt="" />
+            </div>
+            <p class="product-name">Product Name</p>
+            <button class="shop-btn">Shop Now</button>
+          </li>
+          <li class="swiper-slide slide-product-flex">
+            <div class="slide-product">
+              <img
+                src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                alt="" />
+            </div>
+            <p class="product-name">Product Name</p>
+            <button class="shop-btn">Shop Now</button>
+          </li>
+          <li class="swiper-slide slide-product-flex">
+            <div class="slide-product">
+              <img
+                src="https://res.cloudinary.com/dj7bc9qpp/image/upload/v1733514634/b15-craftsman-natural-shaker_mxyzu5.webp"
+                alt="" />
+            </div>
+            <p class="product-name">Product Name</p>
+            <button class="shop-btn">Shop Now</button>
+          </li>
+        </ul>
+        <div class="swiper-button-next" id="nxt"></div>
+        <div class="swiper-button-prev" id="prev"></div>
+      </div>
+      <div class="kitchen-cabinets-listing-home">
+        <h2>Learn More About our Cabinets</h2>
+        <p>
+          dovetail and plywood construction, and impeccable customer service
+          are a few reasons Lily Ann Cabinets is known for being the leading
+          distributor of premium cabinets. Our cabinets are shipped out within
+          72 hours and our professional designers are always available for any
+          home renovation questions you may have.
+        </p>
+        <div class="kitchen-grid1">
+          <div class="kitchen-item">
+            <img src="	https://www.lilyanncabinets.com/media/six-blocks/white-cabinets/main.jpg" alt="img1" />
+            <p>Name</p>
+          </div>
+          <div class="kitchen-item">
+            <img src="	https://www.lilyanncabinets.com/media/six-blocks/white-cabinets/main.jpg" alt="img1" />
+            <p>Name</p>
+          </div>
+          <div class="kitchen-item">
+            <img src="	https://www.lilyanncabinets.com/media/six-blocks/white-cabinets/main.jpg" alt="img1" />
+            <p>Name</p>
+          </div>
+          <div class="kitchen-item">
+            <img src="	https://www.lilyanncabinets.com/media/six-blocks/white-cabinets/main.jpg" alt="img1" />
+            <p>Name</p>
+          </div>
+          <div class="kitchen-item">
+            <img src="	https://www.lilyanncabinets.com/media/six-blocks/white-cabinets/main.jpg" alt="img1" />
+            <p>Name</p>
+          </div>
+          <div class="kitchen-item">
+            <img src="	https://www.lilyanncabinets.com/media/six-blocks/white-cabinets/main.jpg" alt="img1" />
+            <p>Name</p>
+          </div>
+        </div>
+      </div>
+      <div class="pagebuilder-column">
+        <div class="backgroundImg">
+          <img class="pagebuilder-mobile-hidden lazyload loaded" loading="lazy" width="1920" height="380"
+            alt="Virtual Tour Home Banner"
+            src="https://www.lilyanncabinets.com/static/version1732876789/frontend/Commercepundit/Lilyann/en_US/Commercepundit_VirtualTourApp/images/vt-homepage-banner.png" />
+          <div class="image-wrap">
+            <img class="pagebuilder-mobile-hidden lazyload loaded" loading="lazy" width="596" height="482"
+              alt="Virtual Tour Home Tab Image"
+              src="https://www.lilyanncabinets.com/static/version1732876789/frontend/Commercepundit/Lilyann/en_US/Commercepundit_VirtualTourApp/images/vt-homepage-ipadimg.png" />
+          </div>
+          <div class="data-content-wrap">
+            <h2><span>Now Introducing</span> Lily Ann <span class="highlight">Live</span></h2>
+            <p>Get answer to your queries with an one-on-one <br> session with our expert</p>
+            <a href="https://www.lilyanncabinets.com/virtualtourmeeting/"
+              class="vt-common-buttons connect-with-us-btn">Connect With Us Now</a><br />
+            <div class="hide-schedule">or</div><br />
+            <a href="https://www.lilyanncabinets.com/virtualtourmeeting/?scheduleform=visible"
+              class="vt-common-buttons schedule-nowbtn">Schedule Now</a><br />
+            <span class="note">Must be over 18 years old and resident of the United States to enter the Lily Ann LIVE
+              experience. We may use this video call recording for quality and marketing purposes.</span>
+          </div>
+        </div>
+      </div>
+      <div class="new-video-home">
+        <div class="section-title">
+          <h2 class="primary">Learn More About Our Premium Cabinetry</h2>
+        </div>
+        <a href="#" target="_blank">
+          <img src="https://www.lilyanncabinets.com/media/wysiwyg/you-tube-section-home-updated-p1.png" alt="You Tube"
+            class="lazyload loaded" loading="lazy" width="1054" height="593" />
+        </a>
+      </div>
+      <div class="customer-review-main">
+        <div class="section-title">
+          <h3 class="primary">
+            Family-owned Business With Over <span>15,300+</span> Trusted
+            Reviews
+          </h3>
+          <p>Overall Average <span class="d-data">4.7 stars</span></p>
+        </div>
+        <div class="review-content">
+          <div class="review-container">
+            <ul class="kitchen-grid">
+              <li class="client-div">
+                <div class="client-image">
+                  <img src="https://www.lilyanncabinets.com/media/wysiwyg/white-shaker-review-p1.png"
+                    alt="Before and after picture Kitchen renovation" class="review-img lazyload loaded" loading="lazy"
+                    width="480" height="270" />
+                  <p>
+                    "Your RTA cabinets are very easy to assembly and budget
+                    friendly. Thank You!"
+                  </p>
+                  <h3>Pamela E. <span>(Colorado White Shaker)</span></h3>
+                  <div class="review-star">
+                    <img src="https://www.lilyanncabinets.com/media/wysiwyg/client-review-star-bulk.png" alt=""
+                      width="180" height="23" />
+                  </div>
+                </div>
+              </li>
+              <li class="client-div">
+                <div class="client-image">
+                  <img src="https://www.lilyanncabinets.com/media/wysiwyg/grey-shaker-review-p1.png"
+                    alt="Stylish Kitchen with grey shaker cabinets with large island with under-mount sink"
+                    class="review-img lazyload loaded" loading="lazy" width="480" height="270" />
+                  <p>
+                    "I’m very impressed with your quality, and very friendly
+                    way you are showing your business."
+                  </p>
+                  <h3>Mary U. <span>(Grey Shaker Elite)</span></h3>
+                  <div class="review-star">
+                    <img src="https://www.lilyanncabinets.com/media/wysiwyg/client-review-star-bulk.png" alt=""
+                      width="180" height="23" />
+                  </div>
+                </div>
+              </li>
+              <li class="client-div">
+                <div class="client-image">
+                  <img src="https://www.lilyanncabinets.com/media/wysiwyg/bristol-linen-review-p1.png"
+                    alt="Bristol Linen kitchen cabinets with structured backspaces" class="review-img lazyload loaded"
+                    loading="lazy" width="480" height="270" />
+                  <p>
+                    "Going to be building a house soon. If you are looking to
+                    buy cabinets, the quality is amazing"
+                  </p>
+                  <h3>Makynzie M. <span>(Bristol Linen)</span></h3>
+                  <div class="review-star">
+                    <img src="https://www.lilyanncabinets.com/media/wysiwyg/client-review-star-bulk.png" alt=""
+                      width="180" height="23" />
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="view-all-review">
+            <button href="" class="view-all-review-btn">
+              View All Reviews
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="dream-home-section-new">
+        <div class="section-title">
+          <h2 class="primary">Practical Styles For Your Dream Home</h2>
           <p>
-            dovetail and plywood construction, and impeccable customer service
-            are a few reasons Lily Ann Cabinets is known for being the leading
-            distributor of premium cabinets. Our cabinets are shipped out within
-            72 hours and our professional designers are always available for any
-            home renovation questions you may have.
+            At Lily Ann Cabinets, we offer a wide range of different
+            accessories such as SPC flooring, decorative hardware, cabinet
+            inserts, tiles, sinks, bathroom accessories, and cabinet lighting.
+            Our home improvement products enhance the functionality of your
+            home for less. With our most popular collection being cabinet
+            organizers, we offer a wide selection with various features to
+            best fit your space!
           </p>
-          <div class="kitchen-grid">
-            <div class="kitchen-item">
-              <img
-                src="	https://www.lilyanncabinets.com/media/six-blocks/white-cabinets/main.jpg"
-                alt="img1"
-              />
-              <p>Name</p>
-            </div>
-            <div class="kitchen-item">
-              <img
-                src="	https://www.lilyanncabinets.com/media/six-blocks/white-cabinets/main.jpg"
-                alt="img1"
-              />
-              <p>Name</p>
-            </div>
-            <div class="kitchen-item">
-              <img
-                src="	https://www.lilyanncabinets.com/media/six-blocks/white-cabinets/main.jpg"
-                alt="img1"
-              />
-              <p>Name</p>
-            </div>
-            <div class="kitchen-item">
-              <img
-                src="	https://www.lilyanncabinets.com/media/six-blocks/white-cabinets/main.jpg"
-                alt="img1"
-              />
-              <p>Name</p>
-            </div>
-            <div class="kitchen-item">
-              <img
-                src="	https://www.lilyanncabinets.com/media/six-blocks/white-cabinets/main.jpg"
-                alt="img1"
-              />
-              <p>Name</p>
-            </div>
-            <div class="kitchen-item">
-              <img
-                src="	https://www.lilyanncabinets.com/media/six-blocks/white-cabinets/main.jpg"
-                alt="img1"
-              />
-              <p>Name</p>
-            </div>
-          </div>
         </div>
-        <div class="pagebuilder-column">
-          <div class="backgroundImg">
-            <img
-              class="pagebuilder-mobile-hidden lazyload loaded"
-              loading="lazy"
-              width="1920"
-              height="380"
-              alt="Virtual Tour Home Banner"
-              src="https://www.lilyanncabinets.com/static/version1732876789/frontend/Commercepundit/Lilyann/en_US/Commercepundit_VirtualTourApp/images/vt-homepage-banner.png"
-            />
-            <div class="image-wrap">
-              <img
-                class="pagebuilder-mobile-hidden lazyload loaded"
-                loading="lazy"
-                width="596"
-                height="482"
-                alt="Virtual Tour Home Tab Image"
-                src="https://www.lilyanncabinets.com/static/version1732876789/frontend/Commercepundit/Lilyann/en_US/Commercepundit_VirtualTourApp/images/vt-homepage-ipadimg.png"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="new-video-home">
-          <div class="section-title">
-            <h2 class="primary">Learn More About Our Premium Cabinetry</h2>
-          </div>
-          <a href="https://www.youtube.com/watch?v=S8pfK1KxoZg" target="_blank">
-            <img
-              src="https://www.lilyanncabinets.com/media/wysiwyg/you-tube-section-home-updated-p1.png"
-              alt="You Tube"
-              class="lazyload loaded"
-              loading="lazy"
-              width="1054"
-              height="593"
-            />
-          </a>
-        </div>
-        <div class="customer-review-main">
-          <div class="section-title">
-            <h3 class="primary">
-              Family-owned Business With Over <span>15,300+</span> Trusted
-              Reviews
-            </h3>
-            <p>Overall Average <span class="d-data">4.7 stars</span></p>
-          </div>
-          <div class="review-content">
-            <div class="review-container">
-              <ul class="kitchen-grid">
-                <li>
-                  <div class="client-image">
-                    <img
-                      src="https://www.lilyanncabinets.com/media/wysiwyg/white-shaker-review-p1.png"
-                      alt="Before and after picture Kitchen renovation"
-                      class="review-img lazyload loaded"
-                      loading="lazy"
-                      width="480"
-                      height="270"
-                    />
-                    <p>
-                      "Your RTA cabinets are very easy to assembly and budget
-                      friendly. Thank You!"
-                    </p>
-                    <h3>Pamela E. <span>(Colorado White Shaker)</span></h3>
-                    <div class="review-star">
-                      <img
-                        src="https://www.lilyanncabinets.com/media/wysiwyg/client-review-star-bulk.png"
-                        alt=""
-                        width="180"
-                        height="23"
-                      />
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="client-image">
-                    <img
-                      src="https://www.lilyanncabinets.com/media/wysiwyg/grey-shaker-review-p1.png"
-                      alt="Stylish Kitchen with grey shaker cabinets with large island with under-mount sink"
-                      class="review-img lazyload loaded"
-                      loading="lazy"
-                      width="480"
-                      height="270"
-                    />
-                    <p>
-                      "I’m very impressed with your quality, and very friendly
-                      way you are showing your business."
-                    </p>
-                    <h3>Mary U. <span>(Grey Shaker Elite)</span></h3>
-                    <div class="review-star">
-                      <img
-                        src="https://www.lilyanncabinets.com/media/wysiwyg/client-review-star-bulk.png"
-                        alt=""
-                        width="180"
-                        height="23"
-                      />
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="client-image">
-                    <img
-                      src="https://www.lilyanncabinets.com/media/wysiwyg/bristol-linen-review-p1.png"
-                      alt="Bristol Linen kitchen cabinets with structured backspaces"
-                      class="review-img lazyload loaded"
-                      loading="lazy"
-                      width="480"
-                      height="270"
-                    />
-                    <p>
-                      "Going to be building a house soon. If you are looking to
-                      buy cabinets, the quality is amazing"
-                    </p>
-                    <h3>Makynzie M. <span>(Bristol Linen)</span></h3>
-                    <div class="review-star">
-                      <img
-                        src="https://www.lilyanncabinets.com/media/wysiwyg/client-review-star-bulk.png"
-                        alt=""
-                        width="180"
-                        height="23"
-                      />
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="view-all-review">
-              <button href="" class="view-all-review-btn">
-                View All Reviews
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="dream-home-section-new">
-          <div class="section-title">
-            <h2 class="primary">Practical Styles For Your Dream Home</h2>
-            <p>
-              At Lily Ann Cabinets, we offer a wide range of different
-              accessories such as SPC flooring, decorative hardware, cabinet
-              inserts, tiles, sinks, bathroom accessories, and cabinet lighting.
-              Our home improvement products enhance the functionality of your
-              home for less. With our most popular collection being cabinet
-              organizers, we offer a wide selection with various features to
-              best fit your space!
-            </p>
-          </div>
-          <section class="dream-home-wrap">
-            <ul class="grid-container">
-              <li>
-                <a
-                  href="https://www.lilyanncabinets.com/cabinets-drawer-inserts.html"
-                  title="Cabinets and Drawer Inserts"
-                >
-                  <img
-                    class="lazyload loaded"
-                    loading="lazy"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/cabinet-drawere-insert-p1.png"
-                    alt="Cabinets and Drawer Inserts"
-                    width="533"
-                    height="500"
-                  />
-                  <h3 class="dream-home-sec-name">
-                    Cabinets and Drawer Inserts
-                  </h3>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.lilyanncabinets.com/cabinet-lighting.html"
-                  title="Cabinet Lighting"
-                >
-                  <img
-                    class="lazyload loaded"
-                    loading="lazy"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/cab-light-kitchen-p1.png"
-                    alt="Cabinet Lighting"
-                    width="533"
-                    height="500"
-                  />
-                  <h3 class="dream-home-sec-name">Cabinet Lighting</h3>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.lilyanncabinets.com/knobs-pulls-and-inserts-kitchen-cabinets.html"
-                  title="Decorative Hardware"
-                >
-                  <img
-                    class="lazyload loaded"
-                    loading="lazy"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/decorative-hardware-p1.png"
-                    alt="Decorative Hardware"
-                    width="533"
-                    height="500"
-                  />
-                  <h3 class="dream-home-sec-name">Decorative Hardware</h3>
-                </a>
-              </li>
-            </ul>
-            <ul class="grid-container">
-              <li>
-                <a
-                  href="https://www.lilyanncabinets.com/spc-flooring.html"
-                  title="SPC Flooring"
-                >
-                  <img
-                    class="lazyload loaded"
-                    loading="lazy"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/spc-flooring-home-page-p1.png"
-                    alt="SPC Flooring"
-                    width="385"
-                    height="385"
-                  />
-                  <h3 class="dream-home-sec-name">SPC Flooring</h3>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.lilyanncabinets.com/kitchen-sink.html"
-                  title="Kitchen Sinks"
-                >
-                  <img
-                    class="lazyload loaded"
-                    loading="lazy"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/kitchen-sink-home-p1.png"
-                    alt="Kitchen Sinks"
-                    width="385"
-                    height="385"
-                  />
-                  <h3 class="dream-home-sec-name">Kitchen Sinks</h3>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.lilyanncabinets.com/bathroom-hardware.html"
-                  title="Bathroom Hardware"
-                >
-                  <img
-                    class="lazyload loaded"
-                    loading="lazy"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/bath-hardware-home-p1.png"
-                    alt="Bathroom Hardware"
-                    width="385"
-                    height="385"
-                  />
-                  <h3 class="dream-home-sec-name">Bathroom Hardware</h3>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.lilyanncabinets.com/rta-kitchens-with-mosaic-tiles-bathroom-vanities.html"
-                  title="Mosaic Tiles"
-                >
-                  <img
-                    class="lazyload loaded"
-                    loading="lazy"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/tile-home-page-p1.png"
-                    alt="Mosaic Tiles"
-                    width="385"
-                    height="385"
-                  />
-                  <h3 class="dream-home-sec-name">Mosaic Tiles</h3>
-                </a>
-              </li>
-            </ul>
-          </section>
-        </div>
-        <div class="home-tiktok-section">
-          <section class="section-title">
-            <h2 class="primary">Get Inspired &amp; Follow Us</h2>
-          </section>
-          <section class="tiktok-feedwrap">
-            <ul class="tiktok-feed-content">
-              <li class="tiktok-feed">
-                <a
-                  href="https://www.tiktok.com/@lily.ann.cabinets"
-                  target="_blank"
-                >
-                  <img
-                    alt="Tiktok"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img8.jpg"
-                    width="190"
-                    height="252"
-                    class="lazyload loaded"
-                    loading="lazy"
-                  />
-
-                  >
-                </a>
-                <p class="tiktok-feedname">IKEA Vs. Lily Ann Cabinets!</p>
-              </li>
-              <li class="tiktok-feed">
-                <a
-                  href="https://www.tiktok.com/@lily.ann.cabinets"
-                  target="_blank"
-                >
-                  <img
-                    alt="Tiktok"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img2.jpg"
-                    width="190"
-                    height="252"
-                    class="lazyload loaded"
-                    loading="lazy"
-                  />
-                </a>
-                <p class="tiktok-feedname">
-                  Kitchen cabinet assembly, made easy!
-                </p>
-              </li>
-              <li class="tiktok-feed">
-                <a
-                  href="https://www.tiktok.com/@lily.ann.cabinets"
-                  target="_blank"
-                >
-                  <img
-                    alt="Tiktok"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img3.jpg"
-                    width="190"
-                    height="252"
-                    class="lazyload loaded"
-                    loading="lazy"
-                  />
-                </a>
-                <p class="tiktok-feedname"></p>
-                  Harlyn’s favorite thing about our cabinets is the soft closing
-                  feature!
-                </p>
-              </li>
-              <li class="tiktok-feed">
-                <a
-                  href="https://www.tiktok.com/@lily.ann.cabinets"
-                  target="_blank"
-                >
-                  <img
-                    alt="Tiktok"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img4.jpg"
-                    width="190"
-                    height="252"
-                    class="lazyload loaded"
-                    loading="lazy"
-                  />
-                </a>
-                <p class="tiktok-feedname"
-                  >Get one of our free samples from the link in our bio!</p
-                >
-              </li>
-              <li class="tiktok-feed">
-                <a
-                  href="https://www.tiktok.com/@lily.ann.cabinets"
-                  target="_blank"
-                >
-                  <img
-                    alt="Tiktok"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img5.jpg"
-                    width="190"
-                    height="252"
-                    class="lazyload loaded"
-                    loading="lazy"
-                  />
-                </a>
-                <p class="tiktok-feedname">Our 3 white shaker cabinets</p>
-              </li>
-              <li class="tiktok-feed">
-                <a
-                  href="https://www.tiktok.com/@lily.ann.cabinets"
-                  target="_blank"
-                >
-                  <img
-                    alt="Tiktok"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img6.jpg"
-                    width="190"
-                    height="252"
-                    class="lazyload loaded"
-                    loading="lazy"
-                  />
-                </a>
-                <p class="tiktok-feedname"
-                  >Lily Ann Cabinets Vs. The big box store</p
-                >
-              </li>
-              <li class="tiktok-feed">
-                <a
-                  href="https://www.tiktok.com/@lily.ann.cabinets"
-                  target="_blank"
-                >
-                  <img
-                    alt="Tiktok"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img7.jpg"
-                    width="190"
-                    height="252"
-                    class="lazyload loaded"
-                    loading="lazy"
-                  />
-                </a>
-                <p class="tiktok-feedname"
-                  >A few pantry cabinets we have in our Largo, FL</p
-                >
-              </li>
-              <li class="tiktok-feed">
-                <a
-                  href="https://www.tiktok.com/@lily.ann.cabinets"
-                  target="_blank"
-                >
-                  <img
-                    alt="Tiktok"
-                    src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img1.jpg"
-                    width="190"
-                    height="252"
-                    class="lazyload loaded"
-                    loading="lazy"
-                  />
-                </a>
-                <p class="tiktok-feedname"
-                  >Cabinets To Go &amp; Lily Ann Cabinets product
-                  differences!</p
-                >
-              </li>
-            </ul>
-          </section>
-          <ul class="new_socila_media_home">
-            <li class="facebook">
-              <div class="social-div">
-                <a href="https://www.facebook.com/lilyanncabinets">
-                  <i></i>
-                </a>
-              </div>
-              <a
-                href="https://www.facebook.com/lilyanncabinets"
-                class="Social-name"
-                title="Facebook"
-                >Facebook</a
-              >
+        <section class="dream-home-wrap">
+          <ul class="grid-container">
+            <li class="cabinet-grid">
+              <a href="https://www.lilyanncabinets.com/cabinets-drawer-inserts.html"
+                title="Cabinets and Drawer Inserts">
+                <img class="lazyload loaded" loading="lazy"
+                  src="https://www.lilyanncabinets.com/media/wysiwyg/cabinet-drawere-insert-p1.png"
+                  alt="Cabinets and Drawer Inserts" width="533" height="500" />
+                <h3 class="dream-home-sec-name">
+                  Cabinets and Drawer Inserts
+                </h3>
+              </a>
             </li>
-            <li class="instagrm">
-              <div class="social-div">
-                <a href="https://www.instagram.com/lilyanncabinets_/">
-                  <i></i>
-                </a>
-              </div>
-              <a
-                href="https://www.instagram.com/lilyanncabinets_/"
-                class="Social-name"
-                title="Instagram"
-                >Instagram</a
-              >
+            <li>
+              <a href="https://www.lilyanncabinets.com/cabinet-lighting.html" title="Cabinet Lighting">
+                <img class="lazyload loaded" loading="lazy"
+                  src="https://www.lilyanncabinets.com/media/wysiwyg/cab-light-kitchen-p1.png" alt="Cabinet Lighting"
+                  width="533" height="500" />
+                <h3 class="dream-home-sec-name">Cabinet Lighting</h3>
+              </a>
             </li>
-            <li class="tiktok">
-              <div class="social-div">
-                <a href="https://www.tiktok.com/@lily.ann.cabinets">
-                  <i></i>
-                </a>
-              </div>
-              <a
-                href="https://www.tiktok.com/@lily.ann.cabinets"
-                class="Social-name"
-                title="TikTok"
-                >TikTok</a
-              >
-            </li>
-            <li class="youtube">
-              <div class="social-div">
-                <a href="https://www.youtube.com/user/LilyKitchenCabinets">
-                  <i></i>
-                </a>
-              </div>
-              <a
-                href="https://www.youtube.com/user/LilyKitchenCabinets"
-                class="Social-name"
-                title="Youtube"
-                >YouTube</a
-              >
-            </li>
-            <li class="pinterest">
-              <div class="social-div">
-                <a href="https://in.pinterest.com/lilyannkitchencabinets/">
-                  <i></i>
-                </a>
-              </div>
-              <a
-                href="https://in.pinterest.com/lilyannkitchencabinets/"
-                class="Social-name"
-                title="Pinterest"
-                >Pinterest</a
-              >
-            </li>
-            <li class="twitter">
-              <div class="social-div">
-                <a href="https://twitter.com/LilyAnnCabinets">
-                  <i></i>
-                </a>
-              </div>
-              <a
-                href="https://twitter.com/LilyAnnCabinets"
-                class="Social-name"
-                title="X"
-                >X</a
-              >
+            <li>
+              <a href="https://www.lilyanncabinets.com/knobs-pulls-and-inserts-kitchen-cabinets.html"
+                title="Decorative Hardware">
+                <img class="lazyload loaded" loading="lazy"
+                  src="https://www.lilyanncabinets.com/media/wysiwyg/decorative-hardware-p1.png"
+                  alt="Decorative Hardware" width="533" height="500" />
+                <h3 class="dream-home-sec-name">Decorative Hardware</h3>
+              </a>
             </li>
           </ul>
+          <ul class="grid-container">
+            <li class="cabinet-grid">
+              <a href="https://www.lilyanncabinets.com/spc-flooring.html" title="SPC Flooring">
+                <img class="lazyload loaded" loading="lazy"
+                  src="https://www.lilyanncabinets.com/media/wysiwyg/spc-flooring-home-page-p1.png" alt="SPC Flooring"
+                  width="385" height="385" />
+                <h3 class="dream-home-sec-name">SPC Flooring</h3>
+              </a>
+            </li>
+            <li class="cabinet-grid">
+              <a href="https://www.lilyanncabinets.com/kitchen-sink.html" title="Kitchen Sinks">
+                <img class="lazyload loaded" loading="lazy"
+                  src="https://www.lilyanncabinets.com/media/wysiwyg/kitchen-sink-home-p1.png" alt="Kitchen Sinks"
+                  width="385" height="385" />
+                <h3 class="dream-home-sec-name">Kitchen Sinks</h3>
+              </a>
+            </li>
+            <li class="cabinet-grid">
+              <a href="https://www.lilyanncabinets.com/bathroom-hardware.html" title="Bathroom Hardware">
+                <img class="lazyload loaded" loading="lazy"
+                  src="https://www.lilyanncabinets.com/media/wysiwyg/bath-hardware-home-p1.png" alt="Bathroom Hardware"
+                  width="385" height="385" />
+                <h3 class="dream-home-sec-name">Bathroom Hardware</h3>
+              </a>
+            </li>
+            <li class="cabinet-grid">
+              <a href="https://www.lilyanncabinets.com/rta-kitchens-with-mosaic-tiles-bathroom-vanities.html"
+                title="Mosaic Tiles">
+                <img class="lazyload loaded" loading="lazy"
+                  src="https://www.lilyanncabinets.com/media/wysiwyg/tile-home-page-p1.png" alt="Mosaic Tiles"
+                  width="385" height="385" />
+                <h3 class="dream-home-sec-name">Mosaic Tiles</h3>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="home-tiktok-section">
+        <section class="section-title">
+          <h2 class="primary">Get Inspired &amp; Follow Us</h2>
+        </section>
+        <section class="tiktok-feedwrap">
+          <ul class="tiktok-feed-content">
+            <li class="tiktok-feed">
+              <a href="#" target="_blank">
+                <img alt="Tiktok" src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img8.jpg" width="190"
+                  height="252" class="lazyload loaded" loading="lazy" />
+
+
+              </a>
+              <p class="tiktok-feedname">IKEA Vs. Lily Ann Cabinets!</p>
+            </li>
+            <li class="tiktok-feed">
+              <a href="#" target="_blank">
+                <img alt="Tiktok" src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img2.jpg" width="190"
+                  height="252" class="lazyload loaded" loading="lazy" />
+              </a>
+              <p class="tiktok-feedname">
+                Kitchen cabinet assembly, made easy!
+              </p>
+            </li>
+            <li class="tiktok-feed">
+              <a href="#" target="_blank">
+                <img alt="Tiktok" src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img3.jpg" width="190"
+                  height="252" class="lazyload loaded" loading="lazy" />
+              </a>
+              <p class="tiktok-feedname"></p>
+              Harlyn’s favorite thing about our cabinets is the soft closing
+              feature!
+              </p>
+            </li>
+            <li class="tiktok-feed">
+              <a href="#" target="_blank">
+                <img alt="Tiktok" src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img4.jpg" width="190"
+                  height="252" class="lazyload loaded" loading="lazy" />
+              </a>
+              <p class="tiktok-feedname">Get one of our free samples from the link in our bio!</p>
+            </li>
+            <li class="tiktok-feed">
+              <a href="#" target="_blank">
+                <img alt="Tiktok" src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img5.jpg" width="190"
+                  height="252" class="lazyload loaded" loading="lazy" />
+              </a>
+              <p class="tiktok-feedname">Our 3 white shaker cabinets</p>
+            </li>
+            <li class="tiktok-feed">
+              <a href="#" target="_blank">
+                <img alt="Tiktok" src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img6.jpg" width="190"
+                  height="252" class="lazyload loaded" loading="lazy" />
+              </a>
+              <p class="tiktok-feedname">Lily Ann Cabinets Vs. The big box store</p>
+            </li>
+            <li class="tiktok-feed">
+              <a href="#" target="_blank">
+                <img alt="Tiktok" src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img7.jpg" width="190"
+                  height="252" class="lazyload loaded" loading="lazy" />
+              </a>
+              <p class="tiktok-feedname">A few pantry cabinets we have in our Largo, FL</p>
+            </li>
+            <li class="tiktok-feed">
+              <a href="#" target="_blank">
+                <img alt="Tiktok" src="https://www.lilyanncabinets.com/media/wysiwyg/tiktok_img1.jpg" width="190"
+                  height="252" class="lazyload loaded" loading="lazy" />
+              </a>
+              <p class="tiktok-feedname">Cabinets To Go &amp; Lily Ann Cabinets product
+                differences!</p>
+            </li>
+          </ul>
+        </section>
+        <ul class="new_socila_media_home">
+          <li class="facebook">
+            <div class="social-div">
+              <svg width="50px" height="50px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+
+                <title>Facebook-color</title>
+                <desc>Created with Sketch.</desc>
+                <defs>
+
+                </defs>
+                <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Color-" transform="translate(-200.000000, -160.000000)" fill="#4460A0">
+                    <path
+                      d="M225.638355,208 L202.649232,208 C201.185673,208 200,206.813592 200,205.350603 L200,162.649211 C200,161.18585 201.185859,160 202.649232,160 L245.350955,160 C246.813955,160 248,161.18585 248,162.649211 L248,205.350603 C248,206.813778 246.813769,208 245.350955,208 L233.119305,208 L233.119305,189.411755 L239.358521,189.411755 L240.292755,182.167586 L233.119305,182.167586 L233.119305,177.542641 C233.119305,175.445287 233.701712,174.01601 236.70929,174.01601 L240.545311,174.014333 L240.545311,167.535091 C239.881886,167.446808 237.604784,167.24957 234.955552,167.24957 C229.424834,167.24957 225.638355,170.625526 225.638355,176.825209 L225.638355,182.167586 L219.383122,182.167586 L219.383122,189.411755 L225.638355,189.411755 L225.638355,208 L225.638355,208 Z"
+                      id="Facebook">
+
+                    </path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <a href="https://www.facebook.com/lilyanncabinets" class="Social-name" title="Facebook">Facebook</a>
+          </li>
+          <li class="instagrm">
+            <div class="social-div">
+              <svg width="50px" height="50px" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint0_radial_87_7153)" />
+                <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint1_radial_87_7153)" />
+                <rect x="2" y="2" width="28" height="28" rx="6" fill="url(#paint2_radial_87_7153)" />
+                <path
+                  d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z"
+                  fill="white" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z"
+                  fill="white" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z"
+                  fill="white" />
+                <defs>
+                  <radialGradient id="paint0_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)">
+                    <stop stop-color="#B13589" />
+                    <stop offset="0.79309" stop-color="#C62F94" />
+                    <stop offset="1" stop-color="#8A3AC8" />
+                  </radialGradient>
+                  <radialGradient id="paint1_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)">
+                    <stop stop-color="#E0E8B7" />
+                    <stop offset="0.444662" stop-color="#FB8A2E" />
+                    <stop offset="0.71474" stop-color="#E2425C" />
+                    <stop offset="1" stop-color="#E2425C" stop-opacity="0" />
+                  </radialGradient>
+                  <radialGradient id="paint2_radial_87_7153" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)">
+                    <stop offset="0.156701" stop-color="#406ADC" />
+                    <stop offset="0.467799" stop-color="#6A45BE" />
+                    <stop offset="1" stop-color="#6A45BE" stop-opacity="0" />
+                  </radialGradient>
+                </defs>
+              </svg>
+            </div>
+            <a href="https://www.instagram.com/lilyanncabinets_/" class="Social-name" title="Instagram">Instagram</a>
+          </li>
+          <li class="tiktok">
+            <div class="social-div">
+              <svg width="50px" height="50px" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+
+                <path d="m0 0h800v800h-800z" />
+
+                <path
+                  d="m196 498.3 1.6 4.6c-.2-.5-.8-2.1-1.6-4.6zm64.9-104.9c2.9-24.9 12.7-38.8 31.1-53.1 26.4-19.3 59.3-8.4 59.3-8.4v-64.9c8-.2 16 .3 23.9 1.5v83.5s-32.9-10.9-59.3 8.4c-18.4 14.3-28.2 28.2-31.1 53.1-.1 13.5 2.3 31.2 13.5 46.4-2.8-1.5-5.6-3.2-8.5-5.1-24.5-17.2-29-43.1-28.9-61.4zm250.4-246.4c-18.1-20.7-25-41.7-27.5-56.4h22.8s-4.5 38.6 28.6 76.5l.5.5c-9-5.8-17.2-12.8-24.4-20.6zm109.9 58.8v81.8s-29.1-1.2-50.7-6.9c-30.1-8-49.4-20.3-49.4-20.3s-13.4-8.8-14.4-9.4v169c0 9.4-2.5 32.9-10 52.5-9.8 25.6-25 42.5-27.8 45.9 0 0-18.5 22.8-51 38.1-29.3 13.8-55.1 13.5-62.8 13.8 0 0-44.5 1.8-84.6-25.3-8.7-6-16.8-12.8-24.2-20.3l.2.2c40.1 27.2 84.6 25.3 84.6 25.3 7.7-.3 33.5 0 62.8-13.8 32.5-15.3 51-38.1 51-38.1 2.8-3.4 18-20.3 27.8-45.9 7.5-19.6 10-43.1 10-52.5v-168.9c1.1.6 14.4 9.4 14.4 9.4s19.3 12.3 49.4 20.3c21.6 5.7 50.7 6.9 50.7 6.9v-64.1c10 2.3 18.5 2.9 24 2.3z"
+                  fill="#ee1d52" />
+
+                <path
+                  d="m597.2 203.4v64.1s-29.1-1.2-50.7-6.9c-30.1-8-49.4-20.3-49.4-20.3s-13.4-8.8-14.4-9.4v169c0 9.4-2.5 32.9-10 52.5-9.8 25.6-25 42.5-27.8 45.9 0 0-18.5 22.8-51 38.1-29.3 13.8-55.1 13.5-62.8 13.8 0 0-44.5 1.8-84.6-25.3l-.2-.2c-4.2-4.3-8.2-8.8-11.9-13.5-12.8-16.3-20.6-35.5-22.6-41v-.1c-3.2-9.5-9.8-32.5-8.9-54.6 1.6-39.1 14.8-63.2 18.3-69.2 9.2-16.4 21.3-31.1 35.5-43.4 12.6-10.6 26.9-19.1 42.2-25 16.6-7 34.4-10.7 52.4-11v64.9s-32.9-10.9-59.3 8.4c-18.4 14.3-28.2 28.2-31.1 53.1-.1 18.3 4.4 44.2 29 61.5 2.9 1.9 5.7 3.6 8.5 5.1 4.3 5.8 9.5 10.9 15.5 15.1 24.1 15.9 44.2 17 70 6.7 17.2-6.9 30.1-22.4 36.1-39.7 3.8-10.8 3.7-21.6 3.7-32.8v-318.6h60c2.5 14.7 9.3 35.7 27.5 56.4 7.3 7.8 15.5 14.8 24.4 20.6 2.6 2.9 16.1 16.9 33.5 25.6 8.9 4.5 18.4 7.9 28.1 10.2z"
+                  fill="#ffffff" />
+
+                <g fill="#69c9d0">
+
+                  <path d="m187.9 450.4 1.5 4.3c-.2-.5-.8-2-1.5-4.3z" />
+
+                  <path
+                    d="m298.9 278c-15.4 5.9-29.6 14.4-42.2 25-14.3 12.3-26.3 27.1-35.5 43.5-3.5 6-16.7 30-18.3 69.2-.9 22.2 5.8 45.1 8.9 54.6v.1c2 5.4 9.8 24.7 22.6 41 3.7 4.7 7.7 9.2 11.9 13.5-13.6-9.4-25.6-20.7-35.9-33.6-12.7-16.1-20.5-35.2-22.5-40.8v-.2c-3.2-9.5-9.9-32.5-8.9-54.7 1.6-39.1 14.8-63.2 18.3-69.2 9.2-16.4 21.2-31.2 35.5-43.5 12.6-10.6 26.9-19.1 42.2-25 9.6-4 19.6-6.9 29.8-8.8 15.4-2.7 31.1-2.9 46.6-.7v18.6c-18.1.3-35.9 4-52.5 11z" />
+
+                  <path
+                    d="m483.8 90.6h-60v318.6c0 11.2 0 22-3.7 32.8-6.1 17.2-19 32.8-36.1 39.7-25.8 10.4-46 9.2-70-6.7-6-4.1-11.2-9.2-15.5-15 20.5 10.9 38.8 10.7 61.5 1.6 17.2-6.9 30.1-22.5 36.1-39.7 3.8-10.8 3.7-21.6 3.7-32.8v-318.6h82.9c-.1 0-1 7.9 1.1 20.1zm113.4 95.1v17.7c-9.7-2.3-19.2-5.7-28.1-10.2-17.3-8.6-30.8-22.7-33.5-25.6 3.1 2 6.2 3.8 9.5 5.5 21.2 10.5 41.9 13.7 52.1 12.6z" />
+
+                </g>
+
+                <path
+                  d="m486.9 701.5c-.7-2.2-1-4.4-1-6.7v-.2c0 2.4.3 4.7 1 6.9zm49.5-6.9v.2c0 2.3-.3 4.5-1 6.7.7-2.2 1-4.5 1-6.9z"
+                  fill="none" />
+
+                <path
+                  d="m485.8 694.8c0 2.3.3 4.5 1 6.7 0 .2.1.3.1.5 3.3 10.6 13.1 17.8 24.2 17.8v25.6c-12.5 0-21.4.4-35-7.6-15.4-9.2-24.1-25.9-24.1-43.3 0-17.9 9.7-35.9 26.3-44.6 12-6.3 21.1-6.3 32.9-6.3v25.6c-14 0-25.3 11.3-25.3 25.3z"
+                  fill="#69c9d0" />
+
+                <path
+                  d="m536.6 694.8c0 2.3-.3 4.5-1 6.7 0 .2-.1.3-.1.5-3.3 10.6-13.1 17.8-24.2 17.8v25.6c12.4 0 21.4.4 34.9-7.6 15.5-9.2 24.2-25.9 24.2-43.3 0-17.9-9.7-35.9-26.3-44.6-12-6.3-21.1-6.3-32.9-6.3v25.6c14 0 25.3 11.3 25.3 25.3v.3z"
+                  fill="#ee1d52" />
+
+                <path
+                  d="m119.5 620.4h93.7l-8.7 25.8h-24.5v98.7h-30.1v-98.7h-30.4zm248.4 0v25.8h30.4v98.7h30.2v-98.7h24.5l8.7-25.8zm-134.3 29.3c8.1 0 14.6-6.5 14.6-14.6s-6.5-14.6-14.6-14.6-14.6 6.5-14.6 14.6 6.5 14.6 14.6 14.6zm-14.6 95.1h29.6v-84.8h-29.6zm136-95.8h-34.6l-29.8 29.8v-58.4h-29.4l-.1 124.3h29.7v-32.4l9.2-8.4 28.8 40.8h31.7l-41.7-59.6zm283.8 36.2 36.2-36.2h-34.6l-29.8 29.8v-58.4h-29.4l-.2 124.4h29.7v-32.4l9.3-8.4 28.8 40.8h31.7zm-76.1 9.2c0 28.1-23.1 50.9-51.6 50.9s-51.6-22.8-51.6-50.9 23.1-50.9 51.6-50.9 51.6 22.8 51.6 50.9zm-26.3 0c0-14-11.3-25.3-25.3-25.3s-25.3 11.3-25.3 25.3 11.3 25.3 25.3 25.3 25.3-11.3 25.3-25.3z"
+                  fill="#ffffff" />
+
+              </svg>
+            </div>
+            <a href="https://www.tiktok.com/@lily.ann.cabinets" class="Social-name" title="TikTok">TikTok</a>
+          </li>
+          <li class="youtube">
+            <div class="social-div">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px"
+                height="50px" viewBox="0 -7 48 48" version="1.1">
+
+                <title>Youtube-color</title>
+                <desc>Created with Sketch.</desc>
+                <defs>
+
+                </defs>
+                <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="Color-" transform="translate(-200.000000, -368.000000)" fill="#CE1312">
+                    <path
+                      d="M219.044,391.269916 L219.0425,377.687742 L232.0115,384.502244 L219.044,391.269916 Z M247.52,375.334163 C247.52,375.334163 247.0505,372.003199 245.612,370.536366 C243.7865,368.610299 241.7405,368.601235 240.803,368.489448 C234.086,368 224.0105,368 224.0105,368 L223.9895,368 C223.9895,368 213.914,368 207.197,368.489448 C206.258,368.601235 204.2135,368.610299 202.3865,370.536366 C200.948,372.003199 200.48,375.334163 200.48,375.334163 C200.48,375.334163 200,379.246723 200,383.157773 L200,386.82561 C200,390.73817 200.48,394.64922 200.48,394.64922 C200.48,394.64922 200.948,397.980184 202.3865,399.447016 C204.2135,401.373084 206.612,401.312658 207.68,401.513574 C211.52,401.885191 224,402 224,402 C224,402 234.086,401.984894 240.803,401.495446 C241.7405,401.382148 243.7865,401.373084 245.612,399.447016 C247.0505,397.980184 247.52,394.64922 247.52,394.64922 C247.52,394.64922 248,390.73817 248,386.82561 L248,383.157773 C248,379.246723 247.52,375.334163 247.52,375.334163 L247.52,375.334163 Z"
+                      id="Youtube">
+
+                    </path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <a href="https://www.youtube.com/user/LilyKitchenCabinets" class="Social-name" title="Youtube">YouTube</a>
+          </li>
+          <li class="pinterest">
+            <div class="social-div">
+              <svg xmlns="http://www.w3.org/2000/svg" width="50px" height="50px" viewBox="0 0 32 32" fill="none">
+                <circle cx="16" cy="16" r="14" fill="white" />
+                <path
+                  d="M16 30C23.732 30 30 23.732 30 16C30 8.26801 23.732 2 16 2C8.26801 2 2 8.26801 2 16C2 21.6801 5.38269 26.5702 10.2435 28.7655C10.25 28.6141 10.2573 28.4752 10.2636 28.3561C10.2722 28.1938 10.2788 28.0682 10.2788 27.9976C10.2788 27.5769 10.5649 25.4904 10.5649 25.4904L12.3149 18.3053C12.0457 17.8678 11.8438 16.9423 11.8438 16.2356C11.8438 12.9711 13.6611 12.2644 14.7716 12.2644C16.1851 12.2644 16.5048 13.7957 16.5048 14.9231C16.5048 15.5194 16.1955 16.4528 15.8772 17.4134C15.5398 18.4314 15.1923 19.4799 15.1923 20.1899C15.1923 21.5697 16.5553 22.2596 17.4976 22.2596C19.988 22.2596 22.2764 19.1298 22.2764 16C22.2764 12.8702 20.8125 9.08412 16.0168 9.08412C11.2212 9.08412 9.06731 12.7356 9.06731 15.5288C9.06731 17.4134 9.77404 18.7933 10.1274 19.0288C10.2284 19.1186 10.4 19.3957 10.2788 19.786C10.1577 20.1764 9.9367 21.0481 9.84135 21.4351C9.83013 21.5248 9.72356 21.6774 9.38702 21.5697C8.96635 21.4351 6.29087 19.7524 6.29087 15.5288C6.29087 11.3053 9.60577 6.39182 16.0168 6.39182C22.4279 6.39182 25.7091 10.6995 25.7091 16C25.7091 21.3005 21.4183 24.6827 18.1538 24.6827C15.5423 24.6827 14.5192 23.516 14.3341 22.9327L13.3413 26.7187C13.1069 27.3468 12.6696 28.4757 12.1304 29.4583C13.3594 29.8111 14.6576 30 16 30Z"
+                  fill="#BB0F23" />
+              </svg>
+            </div>
+            <a href="https://in.pinterest.com/lilyannkitchencabinets/" class="Social-name"
+              title="Pinterest">Pinterest</a>
+          </li>
+          <li class="twitter">
+            <div class="social-div">
+              <svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg"
+                xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" width="50px"
+                height="50px" viewBox="0 0 24 24" version="1.1">
+                <g transform="translate(0 -1028.4)">
+                  <g>
+                    <path
+                      d="m4 1031.4c-1.1046 0-2 0.9-2 2v16c0 1.1 0.8954 2 2 2h16c1.105 0 2-0.9 2-2v-16c0-1.1-0.895-2-2-2h-16z"
+                      fill="#1499ca" />
+                    <path
+                      d="m4 2c-1.1046 0-2 0.8954-2 2v16c0 1.105 0.8954 2 2 2h16c1.105 0 2-0.895 2-2v-16c0-1.1046-0.895-2-2-2h-16z"
+                      transform="translate(0 1028.4)" fill="#1ab2e8" />
+                    <path fill="#1499ca"
+                      d="m15.474 1036.5c-0.811 0-1.532 0.2-2.107 0.8-0.569 0.6-0.835 1.3-0.835 2.1 0 0.2 0.024 0.4 0.072 0.7-1.198-0.1-2.325-0.4-3.378-0.9-1.0475-0.6-1.9556-1.3-2.6882-2.2-0.2664 0.4-0.3996 0.9-0.3996 1.5 0 0.5 0.1272 1 0.3633 1.4s0.5449 0.7 0.9445 1c-0.4723 0-0.8961-0.1-1.3078-0.4v0.1c0 0.7 0.2119 1.3 0.6539 1.9 0.448 0.5 1.0292 0.8 1.7073 1-0.2543 0-0.5388 0.1-0.7992 0.1-0.1695 0-0.3451 0-0.5448-0.1 0.1876 0.6 0.5509 1.1 1.0534 1.5s1.0716 0.5 1.7074 0.6c-1.0656 0.8-2.3068 1.2-3.669 1.2h-0.6902c1.3622 0.8 2.8637 1.3 4.504 1.3 1.042 0 2.029-0.2 2.943-0.5s1.677-0.8 2.325-1.3c0.648-0.6 1.205-1.2 1.671-1.9 0.472-0.8 0.823-1.5 1.053-2.3s0.363-1.6 0.363-2.4c0-0.1-0.03-0.3-0.036-0.4 0.575-0.4 1.084-0.8 1.49-1.4-0.564 0.2-1.145 0.3-1.708 0.4 0.636-0.4 1.084-0.9 1.308-1.6-0.581 0.3-1.193 0.6-1.853 0.7-0.581-0.6-1.295-0.9-2.143-0.9z" />
+                    <path fill="#ecf0f1"
+                      d="m15.474 1035.5c-0.811 0-1.531 0.2-2.107 0.8-0.569 0.6-0.835 1.3-0.835 2.1 0 0.2 0.024 0.4 0.073 0.7-1.199-0.1-2.325-0.4-3.3788-0.9-1.0474-0.6-1.9556-1.3-2.6882-2.2-0.2664 0.4-0.3995 0.9-0.3995 1.5 0 0.5 0.1271 1 0.3632 1.4s0.5449 0.7 0.9445 1c-0.4722 0-0.8961-0.1-1.3077-0.4v0.1c0 0.7 0.2119 1.3 0.6538 1.9 0.448 0.5 1.0293 0.8 1.7074 1-0.2543 0-0.5389 0.1-0.7992 0.1-0.1695 0-0.3451 0-0.5449-0.1 0.1877 0.6 0.5509 1.1 1.0534 1.5 0.5026 0.4 1.0717 0.5 1.7074 0.6-1.0656 0.8-2.3067 1.2-3.669 1.2h-0.6902c1.3623 0.8 2.8637 1.3 4.5048 1.3 1.041 0 2.028-0.2 2.942-0.5s1.677-0.8 2.325-1.3c0.648-0.6 1.205-1.2 1.671-1.9 0.472-0.8 0.823-1.5 1.053-2.3 0.231-0.8 0.364-1.6 0.364-2.4 0-0.1-0.031-0.3-0.037-0.4 0.576-0.4 1.084-0.8 1.49-1.4-0.563 0.2-1.145 0.3-1.708 0.4 0.636-0.4 1.084-0.9 1.308-1.6-0.581 0.3-1.193 0.6-1.852 0.7-0.582-0.6-1.296-0.9-2.144-0.9z" />
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <a href="https://twitter.com/LilyAnnCabinets" class="Social-name" title="X">Twitter</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="questions-section">
+      <div class="questionsAndAnsSection">
+        <div class="section-title">
+          <p>RTA Cabinets at Wholesale Prices</p>
+          <span>The #1 Online Source For Kitchen Cabinets</span>
+        </div>
+        <div class="q-section">
+          <div class="q-section-q">
+            <button id="btn1" class="btn1">+</button>
+            <h2 id="q1">Discount Ready to Assemble Cabinets</h2>
+          </div>
+          <p id="a1" class="ans">Unlike most cabinet stores online that also sell RTA cabinets, we manufacture the
+            cabinetry we
+            sell. We've developed a proprietary manufacturing process that involves 12 layers of finish to bring the
+            beauty of custom cabinetry at the price of wholesale cabinets. Our unique assembly method is easier than
+            other RTA cabinets and leaves you with a more professional-looking finished product. Most ready-to-assemble
+            cabinets are held together using several large metal L-brackets or big plastic clips, whereas our cabinets
+            are designed to interlock like puzzle pieces. This means means you only need two assemble clips, which don't
+            show when completed.
+            Lily Ann Cabinets is a family-owned company, and we pride ourselves on our workmanship, customer delivery,
+            and expert knowledge on all things related to ready-to-assemble cabinets. Our RTA cabinets last longer and
+            are stronger than the rest, so they hold up better to the daily use and grease in the kitchen, and moisture
+            and water in the bathroom.</p>
+        </div>
+
+        <hr />
+        <div class="q-section">
+          <div class="q-section-q">
+            <button id="btn2" class="btn1">+</button>
+            <h2 id="q2">Discount Ready to Assemble Cabinets</h2>
+          </div>
+
+          <p id="a2" class="ans">Unlike most cabinet stores online that also sell RTA cabinets, we manufacture the
+            cabinetry we
+            sell. We've developed a proprietary manufacturing process that involves 12 layers of finish to bring the
+            beauty of custom cabinetry at the price of wholesale cabinets. Our unique assembly method is easier than
+            other RTA cabinets and leaves you with a more professional-looking finished product. Most ready-to-assemble
+            cabinets are held together using several large metal L-brackets or big plastic clips, whereas our cabinets
+            are designed to interlock like puzzle pieces. This means means you only need two assemble clips, which don't
+            show when completed.
+            Lily Ann Cabinets is a family-owned company, and we pride ourselves on our workmanship, customer delivery,
+            and expert knowledge on all things related to ready-to-assemble cabinets. Our RTA cabinets last longer and
+            are stronger than the rest, so they hold up better to the daily use and grease in the kitchen, and moisture
+            and water in the bathroom.</p>
+        </div>
+        <hr />
+        <div class="q-section">
+          <div class="q-section-q"><button id="btn3" class="btn1">+</button>
+            <h2 id="q3">Discount Ready to Assemble Cabinets</h2>
+          </div>
+
+          <p id="a3" class="ans">Unlike most cabinet stores online that also sell RTA cabinets, we manufacture the
+            cabinetry we
+            sell. We've developed a proprietary manufacturing process that involves 12 layers of finish to bring the
+            beauty of custom cabinetry at the price of wholesale cabinets. Our unique assembly method is easier than
+            other RTA cabinets and leaves you with a more professional-looking finished product. Most ready-to-assemble
+            cabinets are held together using several large metal L-brackets or big plastic clips, whereas our cabinets
+            are designed to interlock like puzzle pieces. This means means you only need two assemble clips, which don't
+            show when completed.
+            Lily Ann Cabinets is a family-owned company, and we pride ourselves on our workmanship, customer delivery,
+            and expert knowledge on all things related to ready-to-assemble cabinets. Our RTA cabinets last longer and
+            are stronger than the rest, so they hold up better to the daily use and grease in the kitchen, and moisture
+            and water in the bathroom.</p>
+        </div>
+        <hr>
+        <div class="q-section">
+          <div class="q-section-q"><button id="btn4" class="btn1">+</button>
+            <h2 id="q4">Discount Ready to Assemble Cabinets</h2>
+          </div>
+
+          <p id="a4" class="ans">Unlike most cabinet stores online that also sell RTA cabinets, we manufacture the
+            cabinetry we
+            sell. We've developed a proprietary manufacturing process that involves 12 layers of finish to bring the
+            beauty of custom cabinetry at the price of wholesale cabinets. Our unique assembly method is easier than
+            other RTA cabinets and leaves you with a more professional-looking finished product. Most ready-to-assemble
+            cabinets are held together using several large metal L-brackets or big plastic clips, whereas our cabinets
+            are designed to interlock like puzzle pieces. This means means you only need two assemble clips, which don't
+            show when completed.
+            Lily Ann Cabinets is a family-owned company, and we pride ourselves on our workmanship, customer delivery,
+            and expert knowledge on all things related to ready-to-assemble cabinets. Our RTA cabinets last longer and
+            are stronger than the rest, so they hold up better to the daily use and grease in the kitchen, and moisture
+            and water in the bathroom.</p>
         </div>
       </div>
     </div>
-  </body>
-  <script>
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: "auto",
-      centeredSlides: true,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
+    <div class="page">
+      <div class="blog-section">
+        <div class="product">
+          <div class="blog-img">
+            <img
+              src="https://cdn.shopify.com/s/files/1/1198/3148/files/from_drab_to_fab_affordable_ways_to_upgrade_your_kitchen_cabinets.webp?v=1733753911"
+              alt="blog1" />
+          </div>
+          <div class="product-details">
+            <p>November 30, 2024</p>
+            <span>From Drab to Fab: Affordable Ways to upgrade Your Kitchen Cabinets</span>
+            <a href="">Read more </a>
+          </div>
+        </div>
+        <div class="product">
+          <div class="blog-img">
+            <img
+              src="https://cdn.shopify.com/s/files/1/1198/3148/files/from_drab_to_fab_affordable_ways_to_upgrade_your_kitchen_cabinets.webp?v=1733753911"
+              alt="blog1" />
+          </div>
+          <div class="product-details">
+            <p>November 30, 2024</p>
+            <span>From Drab to Fab: Affordable Ways to upgrade Your Kitchen Cabinets</span>
+            <a href="">Read more </a>
+          </div>
+        </div>
+        <div class="product">
+          <div class="blog-img">
+            <img
+              src="https://cdn.shopify.com/s/files/1/1198/3148/files/from_drab_to_fab_affordable_ways_to_upgrade_your_kitchen_cabinets.webp?v=1733753911"
+              alt="blog1" />
+          </div>
+          <div class="product-details">
+            <p>November 30, 2024</p>
+            <span>From Drab to Fab: Affordable Ways to upgrade Your Kitchen Cabinets</span>
+            <a href="">Read more </a>
+          </div>
+        </div>
+        <div class="product">
+          <div class="blog-img">
+            <img
+              src="https://cdn.shopify.com/s/files/1/1198/3148/files/from_drab_to_fab_affordable_ways_to_upgrade_your_kitchen_cabinets.webp?v=1733753911"
+              alt="blog1" />
+          </div>
+          <div class="product-details">
+            <p>November 30, 2024</p>
+            <span>From Drab to Fab: Affordable Ways to upgrade Your Kitchen Cabinets</span>
+            <a href="">Read more </a>
+          </div>
+        </div>
+        <div class="product">
+          <div class="blog-img">
+            <img
+              src="https://cdn.shopify.com/s/files/1/1198/3148/files/from_drab_to_fab_affordable_ways_to_upgrade_your_kitchen_cabinets.webp?v=1733753911"
+              alt="blog1" />
+          </div>
+          <div class="product-details">
+            <p>November 30, 2024</p>
+            <span>From Drab to Fab: Affordable Ways to upgrade Your Kitchen Cabinets</span>
+            <a href="">Read more </a>
+          </div>
+        </div>
+        <div class="product">
+          <div class="blog-img">
+            <img
+              src="https://cdn.shopify.com/s/files/1/1198/3148/files/from_drab_to_fab_affordable_ways_to_upgrade_your_kitchen_cabinets.webp?v=1733753911"
+              alt="blog1" />
+          </div>
+          <div class="product-details">
+            <p>November 30, 2024</p>
+            <span>From Drab to Fab: Affordable Ways to upgrade Your Kitchen Cabinets</span>
+            <a href="">Read more </a>
+          </div>
+        </div>
+        <br />
+      </div>
+      <a class="view-all-btn">View All Blogs</a>
+    </div>
+  </div>
+</body>
+<script>
+  let nextBtn = document.getElementById("nxt")
+  let prevBtn = document.getElementById("prev")
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 'auto',
+    autoHeight: true,
+    centeredSlides: false,
+    watchOverflow: false,
+    preloadImages: true,
+    allowTouchMove: false,
+    lazy: true,
+    loop: false,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
       },
-      breakpoints: {
-        769: {
-          slidesPerView: 5,
-          slidesPerGroup: 1,
-        },
+      768: {
+        slidesPerView: 4,
+        spaceBetween: 40,
       },
-    });
-  </script>
+      1024: {
+        slidesPerView: 5,
+        spaceBetween: 50,
+      },
+    },
+  });
+  setInterval(() => {
+    console.log(swiper)
+  }, 1000)
+  //q1
+  let btn1 = document.getElementById("btn1")
+  let q1Element = document.getElementById("q1")
+  let a1Element = document.getElementById("a1")
+
+  a1Element.style.display = "none";
+
+  btn1.addEventListener("click", function () {
+    if (a1Element.style.display == "none") {
+      a1Element.style.display = "block"
+      btn1.innerHTML = "-"
+    } else {
+      a1Element.style.display = "none"
+      btn1.innerHTML = "+"
+    }
+  })
+  //q2
+
+  let btn2 = document.getElementById("btn2")
+  let q2Element = document.getElementById("q2")
+  let a2Element = document.getElementById("a2")
+  a2Element.style.display = "none";
+
+  btn2.addEventListener("click", function () {
+    if (a2Element.style.display == "none") {
+      a2Element.style.display = "block"
+      btn2.innerHTML = "-"
+    } else {
+      a2Element.style.display = "none"
+      btn2.innerHTML = "+"
+    }
+  })
+  //q3
+  let btn3 = document.getElementById("btn3")
+  let q3Element = document.getElementById("q3")
+  let a3Element = document.getElementById("a3")
+  a3Element.style.display = "none";
+
+  btn3.addEventListener("click", function () {
+    if (a3Element.style.display == "none") {
+      a3Element.style.display = "block"
+      btn3.innerHTML = "-"
+    } else {
+      a3Element.style.display = "none"
+      btn3.innerHTML = "+"
+    }
+  })
+  //q4
+  let btn4 = document.getElementById("btn4")
+  let q4Element = document.getElementById("q4")
+  let a4Element = document.getElementById("a4")
+  a4Element.style.display = "none";
+  btn4.addEventListener("click", function () {
+    if (a4Element.style.display == "none") {
+      a4Element.style.display = "block"
+      btn4.innerHTML = "-"
+    } else {
+      a4Element.style.display = "none"
+      btn4.innerHTML = "+"
+    }
+  })
+
+</script>
+
 </html>
